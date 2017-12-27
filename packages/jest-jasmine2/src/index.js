@@ -89,6 +89,10 @@ async function jasmine2(
         environment.fakeTimers.useFakeTimers();
       }
     }
+
+    if (config.timers === 'fake') {
+      environment.fakeTimers.clearAllTimers();
+    }
   });
 
   env.addReporter(reporter);
